@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvTituloPrincipal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:text="Cálculo de IMC"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@id/tvNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Nome:"
+        app:layout_constraintBottom_toBottomOf="@id/etNome"
+        app:layout_constraintStart_toStartOf="@id/tvTituloPrincipal"
+        app:layout_constraintTop_toTopOf="@id/etNome" />
+
+
+    <EditText
+        android:id="@+id/etNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/tvTituloPrincipal"
+        app:layout_constraintStart_toEndOf="@id/tvNome"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloPrincipal" />
+
+
+    <TextView
+        android:id="@+id/tvPeso"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Peso:"
+        app:layout_constraintBottom_toBottomOf="@id/etPeso"
+        app:layout_constraintStart_toStartOf="@id/tvTituloPrincipal"
+        app:layout_constraintTop_toTopOf="@id/etPeso" />
+
+    <EditText
+        android:id="@+id/etPeso"
+        android:layout_width="0dp"
+
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/tvTituloPrincipal"
+        app:layout_constraintStart_toEndOf="@id/tvNome"
+        app:layout_constraintTop_toBottomOf="@id/tvNome" />
+
+
+    <TextView
+        android:id="@+id/tvAltura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Altura:"
+        app:layout_constraintBottom_toBottomOf="@id/etAltura"
+        app:layout_constraintStart_toStartOf="@id/tvTituloPrincipal"
+        app:layout_constraintTop_toTopOf="@id/etAltura" />
+
+    <EditText
+        android:id="@+id/etAltura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/tvTituloPrincipal"
+        app:layout_constraintStart_toEndOf="@id/tvNome"
+        app:layout_constraintTop_toBottomOf="@id/tvPeso" />
+
+    <Button
+        android:id="@+id/btnEnviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Enviar"
+        app:layout_constraintEnd_toEndOf="@id/etAltura"
+        app:layout_constraintStart_toStartOf="@id/tvAltura"
+        app:layout_constraintTop_toBottomOf="@id/tvAltura" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
