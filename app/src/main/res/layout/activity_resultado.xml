@@ -7,4 +7,56 @@
     android:layout_height="match_parent"
     tools:context=".ResultadoActivity">
 
+    <TextView
+        android:id="@+id/tvBoasVindas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="@string/boas_vindas"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/tvImc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvImc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/imc"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvClassificacao"
+        app:layout_constraintEnd_toEndOf="@id/tvBoasVindas"
+        app:layout_constraintStart_toStartOf="@id/tvBoasVindas"
+        app:layout_constraintTop_toBottomOf="@id/tvBoasVindas" />
+
+    <TextView
+        android:id="@+id/tvClassificacao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/tvNotaAlerta"
+        app:layout_constraintEnd_toEndOf="@id/tvBoasVindas"
+        app:layout_constraintStart_toStartOf="@id/tvBoasVindas"
+        app:layout_constraintTop_toBottomOf="@id/tvImc"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/tvNotaAlerta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvBoasVindas"
+        app:layout_constraintStart_toStartOf="@id/tvBoasVindas"
+        app:layout_constraintTop_toBottomOf="@id/tvClassificacao"
+        tools:text="@string/alerta_peso" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
