@@ -5,16 +5,59 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import br.edu.faseh.imc.databinding.ActivityResultadoBinding
+import java.util.Locale
 
 class ResultadoActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityResultadoBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityResultadoBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_resultado)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        prepararCampos()
+    }
+
+    private fun prepararCampos() {
+        val nome = intent.getStringExtra("nome")
+        val imc = intent.getDoubleExtra("imc", 0.0)
+
+        when (imc) {
+            in 0.0..18.0 -> {
+                configurarTextViews(
+                    nome = nome,
+                    imc = imc,
+                    classificacao = resources.getStringArray(R.array.peso_classificacao)[0]
+                )
+            }
+
+            in 25.0..29.9 -> {
+                configurarTextViews(
+                    nome = nome,
+                    imc = imc,
+                    classificacao = resources.getStringArray(R.array.peso_classificacao)[2]
+                )
+            }
+        }
+    }
+
+    private fun configurarTextViews(
+        nome: String?,
+        imc: Double,
+        classificacao: String
+    ) {
+        binding.apply {
+            tvBoasVindas.text = getString(R.string.boas_vindas, nome)
+            tvImc.text = imc.toString()
+            tvClassificacao.text = getString(R.string.classificacao, classificacao)
+
         }
     }
 }

@@ -2,7 +2,7 @@
     <string name="app_name">IMC</string>
     <string name="boas_vindas">Olá %1$s,</string>
     <string name="resultado">o resultado de seu IMC é</string>
-    <string name="imc"> %1$s</string>
+    <string name="imc"> %1$.2f</string>
     <string-array name="peso_classificacao">
         <item>Abaixo do normal</item>
         <item>Normal</item>
@@ -12,5 +12,6 @@
         <item>Obsidade grau III</item>
     </string-array>
     <string name="lbl_nota">Nota:</string>
-    <string name="alerta_peso">o cálculo de IMC não leva em consideração a composição corporal. Por esse motivo, pessoas com muita massa muscular, como é o caso de alguns atletas, podem apresentar um IMC acima do normal. O ideal é consultar um nutricionista para fazer uma avaliação mais detalhada.</string>
+    <string name="alerta_peso">Nota: o cálculo de IMC não leva em consideração a composição corporal. Por esse motivo, pessoas com muita massa muscular, como é o caso de alguns atletas, podem apresentar um IMC acima do normal. O ideal é consultar um nutricionista para fazer uma avaliação mais detalhada.</string>
+    <string name="classificacao">Classificação: %1$s</string>
 </resources>
