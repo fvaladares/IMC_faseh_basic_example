@@ -36,11 +36,19 @@ class MainActivity : AppCompatActivity() {
             val peso = binding.etPeso.text.toString().toDouble()
             val altura = (binding.etAltura.text.toString().toDouble()) / 100
 
-            calcularImc(nome = nome, peso = peso, altura = altura)
+            calcularImc(
+                nome = nome,
+                peso = peso,
+                altura = altura
+            )
         }
     }
 
-    private fun calcularImc(nome: String, peso: Double, altura: Double) {
+    private fun calcularImc(
+        nome: String,
+        peso: Double,
+        altura: Double,
+    ) {
         val imc = peso / (altura * altura)
 
         val intent: Intent = Intent(this, ResultadoActivity::class.java)

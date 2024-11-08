@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:gravity="center"
-        android:text="Cálculo de IMC"
+        android:text="@string/calculo_de_imc"
         android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@id/tvNome"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,6 +73,7 @@
     <EditText
         android:id="@+id/etAltura"
         android:layout_width="0dp"
+        android:hint="Em centímetros"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/tvTituloPrincipal"
         app:layout_constraintStart_toEndOf="@id/tvNome"

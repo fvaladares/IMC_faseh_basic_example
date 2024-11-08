@@ -14,4 +14,5 @@
     <string name="lbl_nota">Nota:</string>
     <string name="alerta_peso">Nota: o cálculo de IMC não leva em consideração a composição corporal. Por esse motivo, pessoas com muita massa muscular, como é o caso de alguns atletas, podem apresentar um IMC acima do normal. O ideal é consultar um nutricionista para fazer uma avaliação mais detalhada.</string>
     <string name="classificacao">Classificação: %1$s</string>
+    <string name="calculo_de_imc">Cálculo de IMC</string>
 </resources>

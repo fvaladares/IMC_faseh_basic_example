@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import br.edu.faseh.imc.databinding.ActivityResultadoBinding
+import java.math.BigDecimal
+import java.math.RoundingMode
 import java.util.Locale
 
 class ResultadoActivity : AppCompatActivity() {
@@ -51,11 +53,12 @@ class ResultadoActivity : AppCompatActivity() {
     private fun configurarTextViews(
         nome: String?,
         imc: Double,
-        classificacao: String
+        classificacao: String,
     ) {
         binding.apply {
             tvBoasVindas.text = getString(R.string.boas_vindas, nome)
-            tvImc.text = imc.toString()
+            val imcString = BigDecimal.valueOf(imc).setScale(2, RoundingMode.HALF_UP).toString()
+            tvImc.text = imcString
             tvClassificacao.text = getString(R.string.classificacao, classificacao)
 
         }
