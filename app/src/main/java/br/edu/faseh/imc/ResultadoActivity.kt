@@ -3,12 +3,12 @@ package br.edu.faseh.imc
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import br.edu.faseh.imc.databinding.ActivityResultadoBinding
 import java.math.BigDecimal
 import java.math.RoundingMode
-import java.util.Locale
 
 class ResultadoActivity : AppCompatActivity() {
 
@@ -28,7 +28,7 @@ class ResultadoActivity : AppCompatActivity() {
     }
 
     private fun prepararCampos() {
-        val nome = intent.getStringExtra("nome")
+        val nome = tratarNome(intent.getStringExtra("nome"))
         val imc = intent.getDoubleExtra("imc", 0.0)
 
         when (imc) {
@@ -36,7 +36,8 @@ class ResultadoActivity : AppCompatActivity() {
                 configurarTextViews(
                     nome = nome,
                     imc = imc,
-                    classificacao = resources.getStringArray(R.array.peso_classificacao)[0]
+                    classificacao = resources.getStringArray(R.array.peso_classificacao)[0],
+                    imgId = R.drawable.imc_05
                 )
             }
 
@@ -44,7 +45,8 @@ class ResultadoActivity : AppCompatActivity() {
                 configurarTextViews(
                     nome = nome,
                     imc = imc,
-                    classificacao = resources.getStringArray(R.array.peso_classificacao)[2]
+                    classificacao = resources.getStringArray(R.array.peso_classificacao)[2],
+                    imgId = R.drawable.imc_04
                 )
             }
         }
@@ -54,13 +56,18 @@ class ResultadoActivity : AppCompatActivity() {
         nome: String?,
         imc: Double,
         classificacao: String,
+        imgId: Int = R.drawable.imc_01,
     ) {
         binding.apply {
             tvBoasVindas.text = getString(R.string.boas_vindas, nome)
             val imcString = BigDecimal.valueOf(imc).setScale(2, RoundingMode.HALF_UP).toString()
             tvImc.text = imcString
             tvClassificacao.text = getString(R.string.classificacao, classificacao)
+            ivImc.setImageDrawable(AppCompatResources.getDrawable(applicationContext, imgId))
 
         }
     }
 }
+
+private fun ResultadoActivity.tratarNome(nome: String?): String? =
+    if (nome.isNullOrBlank()) getString(R.string.ola_tudo_bem) else nome

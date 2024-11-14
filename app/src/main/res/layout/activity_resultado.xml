@@ -23,16 +23,32 @@
 
 
     <TextView
-        android:id="@+id/tvImc"
-        android:layout_width="0dp"
+        android:id="@+id/tvImcLabel"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/resultado"
+        android:textSize="16sp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvImc"
+        app:layout_constraintEnd_toStartOf="@id/tvImc"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/tvBoasVindas"
+        app:layout_constraintTop_toTopOf="@id/tvImc" />
+
+
+    <TextView
+        android:id="@+id/tvImc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:gravity="center"
         android:text="@string/imc"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/tvClassificacao"
         app:layout_constraintEnd_toEndOf="@id/tvBoasVindas"
-        app:layout_constraintStart_toStartOf="@id/tvBoasVindas"
+        app:layout_constraintStart_toEndOf="@id/tvImcLabel"
         app:layout_constraintTop_toBottomOf="@id/tvBoasVindas" />
 
     <TextView
@@ -41,11 +57,22 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@id/tvNotaAlerta"
+        app:layout_constraintBottom_toTopOf="@id/ivImc"
         app:layout_constraintEnd_toEndOf="@id/tvBoasVindas"
         app:layout_constraintStart_toStartOf="@id/tvBoasVindas"
         app:layout_constraintTop_toBottomOf="@id/tvImc"
         tools:text="@tools:sample/lorem" />
+
+    <ImageView
+        android:id="@+id/ivImc"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toTopOf="@id/tvNotaAlerta"
+        app:layout_constraintEnd_toEndOf="@id/tvBoasVindas"
+        app:layout_constraintStart_toStartOf="@id/tvBoasVindas"
+        app:layout_constraintTop_toBottomOf="@id/tvClassificacao"
+        tools:src="@drawable/imc_01" />
+
 
     <TextView
         android:id="@+id/tvNotaAlerta"
@@ -57,6 +84,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/tvBoasVindas"
         app:layout_constraintStart_toStartOf="@id/tvBoasVindas"
-        app:layout_constraintTop_toBottomOf="@id/tvClassificacao" />
+        app:layout_constraintTop_toBottomOf="@id/ivImc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
