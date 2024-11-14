@@ -39,13 +39,13 @@ class MainActivity : AppCompatActivity() {
 
             if (peso.isBlank()) {
                 continuar = false
-                binding.etPeso.error = "Campo obrigatório."
+                binding.etPeso.error = getString(R.string.campo_obrigatorio_lbl)
             }
 
 
             if (altura.isBlank()) {
                 continuar = false
-                binding.etAltura.error = "Campo obrigatório."
+                binding.etAltura.error = getString(R.string.campo_obrigatorio_lbl)
             }
 
 
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                     altura = altura.toDouble() / 100
                 )
             } else {
-                Toast.makeText(this, "Campos obrigatórios devem ser preenchidos", Toast.LENGTH_LONG)
+                Toast.makeText(this, getString(R.string.campos_obrigatorios_lbl), Toast.LENGTH_LONG)
                     .show()
             }
         }
@@ -70,9 +70,14 @@ class MainActivity : AppCompatActivity() {
         val imc = peso / (altura * altura)
 
         val intent: Intent = Intent(this, ResultadoActivity::class.java)
-        intent.putExtra("nome", nome)
-        intent.putExtra("imc", imc)
+        intent.putExtra(NOME, nome)
+        intent.putExtra(IMC, imc)
         startActivity(intent)
+    }
+
+    companion object {
+        const val NOME = "nome"
+        const val IMC = "imc"
     }
 
 }

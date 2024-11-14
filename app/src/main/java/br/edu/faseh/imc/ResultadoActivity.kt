@@ -28,12 +28,12 @@ class ResultadoActivity : AppCompatActivity() {
     }
 
     private fun prepararCampos() {
-        val nome = tratarNome(intent.getStringExtra("nome"))
-        val imc = intent.getDoubleExtra("imc", 0.0)
+        val nome = tratarNome(intent.getStringExtra(MainActivity.NOME))
+        val imc = intent.getDoubleExtra(MainActivity.IMC, 0.0)
 
         when (imc) {
             in 0.0..18.0 -> {
-                configurarTextViews(
+                configurarView(
                     nome = nome,
                     imc = imc,
                     classificacao = resources.getStringArray(R.array.peso_classificacao)[0],
@@ -42,7 +42,7 @@ class ResultadoActivity : AppCompatActivity() {
             }
 
             in 25.0..29.9 -> {
-                configurarTextViews(
+                configurarView(
                     nome = nome,
                     imc = imc,
                     classificacao = resources.getStringArray(R.array.peso_classificacao)[2],
@@ -52,7 +52,7 @@ class ResultadoActivity : AppCompatActivity() {
         }
     }
 
-    private fun configurarTextViews(
+    private fun configurarView(
         nome: String?,
         imc: Double,
         classificacao: String,
@@ -63,7 +63,7 @@ class ResultadoActivity : AppCompatActivity() {
             val imcString = BigDecimal.valueOf(imc).setScale(2, RoundingMode.HALF_UP).toString()
             tvImc.text = imcString
             tvClassificacao.text = getString(R.string.classificacao, classificacao)
-            ivImc.setImageDrawable(AppCompatResources.getDrawable(applicationContext, imgId))
+            ivImc.setImageDrawable(AppCompatResources.getDrawable(this@ResultadoActivity, imgId))
 
         }
     }
@@ -71,3 +71,14 @@ class ResultadoActivity : AppCompatActivity() {
 
 private fun ResultadoActivity.tratarNome(nome: String?): String? =
     if (nome.isNullOrBlank()) getString(R.string.ola_tudo_bem) else nome
+
+
+
+
+
+
+
+
+
+
+

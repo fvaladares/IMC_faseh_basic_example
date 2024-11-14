@@ -16,4 +16,6 @@
     <string name="classificacao">Classificação: %1$s</string>
     <string name="calculo_de_imc">Cálculo de IMC</string>
     <string name="ola_tudo_bem">tudo bem?</string>
+    <string name="campos_obrigatorios_lbl">Campos obrigatórios devem ser preenchidos</string>
+    <string name="campo_obrigatorio_lbl">Campo obrigatório.</string>
 </resources>
