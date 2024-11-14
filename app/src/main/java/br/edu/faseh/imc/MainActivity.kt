@@ -14,6 +14,14 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
 
+    /*
+    TODO(AJUSTES)
+    Remover todos os warnings do XML da view.
+
+    Adicionar Logs dos métodos invocados. Quais tipos de logs existem? Log.i, Log.?
+     */
+
+    //TODO(AJUSTE) - Extrair todos os textos do xml para o arquivo strings.xml
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -29,6 +37,10 @@ class MainActivity : AppCompatActivity() {
 
         Log.i("Fabricio Valadares", "Passei por aqui")
     }
+
+    // TODO(AJUSTES) - INCLUIR UM BOTÃO PARA LIMPAR OS CAMPOS PREENCHIDOS.
+
+    // TODO(AJUSTE-OPT) - Incluir uma opção de sexo utilizando radiobuttons.
 
     private fun configListeners() {
         binding.btnEnviar.setOnClickListener {

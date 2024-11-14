@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".ResultadoActivity">
 
+
+
     <TextView
         android:id="@+id/tvBoasVindas"
         android:layout_width="0dp"

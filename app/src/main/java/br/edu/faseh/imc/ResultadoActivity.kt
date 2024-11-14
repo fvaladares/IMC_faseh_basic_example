@@ -14,6 +14,8 @@ class ResultadoActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityResultadoBinding
 
+
+//   TODO(AJUSTES) - Remover os warnings dos XML da view
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultadoBinding.inflate(layoutInflater)
@@ -27,11 +29,18 @@ class ResultadoActivity : AppCompatActivity() {
         prepararCampos()
     }
 
+    /**
+     * TODO(AJUSTES)
+     * Adicionar as demais classificações
+     * Referência das classificaçẽos:
+     * https://abeso.org.br/obesidade-e-sindrome-metabolica/calculadora-imc/
+     */
     private fun prepararCampos() {
         val nome = tratarNome(intent.getStringExtra(MainActivity.NOME))
         val imc = intent.getDoubleExtra(MainActivity.IMC, 0.0)
 
         when (imc) {
+//            abaixo do normal
             in 0.0..18.0 -> {
                 configurarView(
                     nome = nome,
@@ -40,6 +49,8 @@ class ResultadoActivity : AppCompatActivity() {
                     imgId = R.drawable.imc_05
                 )
             }
+
+//            sobrepeso
 
             in 25.0..29.9 -> {
                 configurarView(
