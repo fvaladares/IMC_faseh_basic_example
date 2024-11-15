@@ -81,7 +81,7 @@ class ResultadoActivity : AppCompatActivity() {
 }
 
 private fun ResultadoActivity.tratarNome(nome: String?): String? =
-    if (nome.isNullOrBlank()) getString(R.string.ola_tudo_bem) else nome
+    if (nome.isNullOrBlank()) getString(R.string.ola_tudo_bem) else "$nome!"
 
 
 

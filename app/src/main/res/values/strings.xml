@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">IMC</string>
-    <string name="boas_vindas">Olá %1$s,</string>
-    <string name="resultado">o resultado de seu IMC é</string>
+    <string name="boas_vindas">Olá, %1$s</string>
+    <string name="resultado">O resultado de seu IMC é</string>
     <string name="imc"> %1$.2f</string>
     <string-array name="peso_classificacao">
         <item>Abaixo do normal</item>

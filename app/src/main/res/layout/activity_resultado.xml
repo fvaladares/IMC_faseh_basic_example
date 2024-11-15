@@ -28,15 +28,14 @@
         android:id="@+id/tvImcLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
         android:gravity="center"
         android:text="@string/resultado"
         android:textSize="16sp"
-        android:layout_marginEnd="4dp"
-        app:layout_constraintBottom_toBottomOf="@id/tvImc"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvImc"
         app:layout_constraintEnd_toStartOf="@id/tvImc"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@id/tvBoasVindas"
-        app:layout_constraintTop_toTopOf="@id/tvImc" />
+        app:layout_constraintStart_toStartOf="@id/tvBoasVindas" />
 
 
     <TextView
